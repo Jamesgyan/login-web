@@ -1,0 +1,5 @@
+ALTER TABLE public.contributions ADD COLUMN IF NOT EXISTS payment_method text NOT NULL DEFAULT 'cash';
+ALTER TABLE public.expenses ADD COLUMN IF NOT EXISTS allocation_id uuid REFERENCES public.budget_allocations(id) ON DELETE SET NULL;
+ALTER TABLE public.expenses ADD COLUMN IF NOT EXISTS payment_method text NOT NULL DEFAULT 'cash';
+CREATE POLICY "room managers write contributions" ON public.contributions FOR ALL TO authenticated USING (budget_id IS NOT NULL AND public.can_manage_room(budget_id)) WITH CHECK (budget_id IS NOT NULL AND public.can_manage_room(budget_id));
+CREATE POLICY "room managers write expenses" ON public.expenses FOR ALL TO authenticated USING (budget_id IS NOT NULL AND public.can_manage_room(budget_id)) WITH CHECK (budget_id IS NOT NULL AND public.can_manage_room(budget_id));

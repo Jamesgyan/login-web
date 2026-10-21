@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791309608020,
+      "tag": "0000_budget_manager_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791480725057,
+      "tag": "0001_room_plans_notifications_expiry",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791526852377,
+      "tag": "0002_room_report_fields",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791615200188,
+      "tag": "0003_task_order_and_receipts",
+      "breakpoints": true
+    }
+  ]
+}
